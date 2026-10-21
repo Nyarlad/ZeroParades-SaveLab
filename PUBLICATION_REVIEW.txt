@@ -1,0 +1,76 @@
+ZERO PARADES SAVELAB 0.1.0 — LOCAL PUBLICATION REVIEW
+
+Status: prepared locally; no remote repository or public release created.
+License: MIT for project source; bundled dependencies retain their licenses.
+
+Validation:
+- 54 synthetic automated tests pass on Windows.
+- Ruff lint and formatting checks pass.
+- Private integration: 85 cached copies / 45 unique contents; exact roundtrips.
+- Both Reno presets reproduce a one-flag diff on their observed source copies.
+- Standalone Windows GUI and CLI pass synthetic smoke checks with no Python on PATH.
+- Real saves, decoded state, identifiers, hashes and evidence files stay outside Git.
+- No game assets, assemblies, decompiled source, telemetry or upload code included.
+
+Intended Git contents (text source only):
+.gitattributes
+.github/workflows/checks.yml
+.github/workflows/windows-build.yml
+.gitignore
+CHANGELOG.md
+CONTRIBUTING.md
+LICENSE
+PUBLICATION_REVIEW.txt
+README.md
+THIRD_PARTY_NOTICES.md
+docs/architecture.md
+docs/presets.md
+docs/release-review.md
+docs/research-audit.md
+docs/safety.md
+docs/save-format.md
+docs/testing.md
+docs/verification.md
+docs/windows-ru.md
+docs/windows.md
+pyproject.toml
+release/v0.1.0.md
+scripts/audit_release.py
+scripts/build_windows.py
+scripts/launch_cli.py
+scripts/launch_gui.py
+src/zero_parades_savelab/__init__.py
+src/zero_parades_savelab/__main__.py
+src/zero_parades_savelab/cli.py
+src/zero_parades_savelab/codec.py
+src/zero_parades_savelab/data/flags.json
+src/zero_parades_savelab/data/presets.json
+src/zero_parades_savelab/demo.py
+src/zero_parades_savelab/diff.py
+src/zero_parades_savelab/discovery.py
+src/zero_parades_savelab/errors.py
+src/zero_parades_savelab/gui.py
+src/zero_parades_savelab/hash128.py
+src/zero_parades_savelab/model.py
+src/zero_parades_savelab/profiles.py
+src/zero_parades_savelab/registry.py
+src/zero_parades_savelab/service.py
+tests/conftest.py
+tests/test_cli_gui.py
+tests/test_codec.py
+tests/test_presets_diff.py
+tests/test_safety.py
+
+Total files: 47
+
+Separate, ignored local release assets:
+artifacts/ZeroParades-SaveLab-0.1.0-windows-x64.zip
+artifacts/ZeroParades-SaveLab-0.1.0-source.zip
+artifacts/SHA256SUMS.txt
+
+Important limits:
+- Verified editing profile: release 1.1 / 40781 / revision 0.
+- Executables are unsigned; local build uses Python 3.11.1.
+- Hosted GitHub Actions are prepared, not executed yet.
+- Original writes and restores always require player confirmation.
+- Public repository/release publication requires separate owner approval.

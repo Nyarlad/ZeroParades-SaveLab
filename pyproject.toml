@@ -1,0 +1,39 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "zero-parades-savelab"
+version = "0.1.0"
+description = "Offline, backup-first save inspector and editor for Zero Parades: For Dead Spies"
+readme = "README.md"
+requires-python = ">=3.11"
+license = {file = "LICENSE"}
+authors = [{name = "ZeroParades-SaveLab contributors"}]
+dependencies = ["pycryptodome>=3.23,<5"]
+
+[project.optional-dependencies]
+dev = ["pytest>=8,<10", "ruff>=0.9,<1", "pyinstaller>=6.11,<7"]
+
+[project.scripts]
+savelab = "zero_parades_savelab.cli:main"
+
+[project.gui-scripts]
+zero-parades-savelab = "zero_parades_savelab.gui:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.package-data]
+zero_parades_savelab = ["data/*.json"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["src"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py311"
+
+[tool.ruff.lint]
+select = ["E4", "E7", "E9", "F"]
