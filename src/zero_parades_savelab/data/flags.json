@@ -1,0 +1,11 @@
+{
+  "reno.HasRenoAskedForKibble": {"status": "Confirmed", "description": "Historical kibble request flag; also controls entry into Reno's kibble conversation branch. Temporary repair target."},
+  "reno.GotKibble": {"status": "Confirmed", "description": "Reno's kibble receipt state. Preserved by the supported repair."},
+  "king_of_trade.BoughtKibble": {"status": "Confirmed", "description": "Kibble purchase state checked by Reno's dialogue entry. Preserved by the repair."},
+  "reno.GivesYouUVsExitPapers": {"status": "Confirmed", "description": "Paper handover state in the completed deal. Preserved by the repair."},
+  "reno.AlternateGoodByeAtEnd": {"status": "Confirmed", "description": "Routes the post-kibble entry to Goodbye. Clearing it alone can replay the kibble scene; it is preserved."},
+  "reno.ReturnedHisModelTrain": {"status": "Confirmed", "description": "Set by the game's train handover sequence. The repair does not simulate handover or set this flag."},
+  "reno.MissingTrain": {"status": "Confirmed", "description": "One of the conditions for the ordinary train handover option."},
+  "orphanage.TrainRepairSuccessful": {"status": "Confirmed", "description": "Successful model train repair state observed before the tested handover."},
+  "reno.GreetDone": {"status": "Confirmed", "description": "Completed Reno greeting; lets the ordinary entry reach his conversation hub."}
+}

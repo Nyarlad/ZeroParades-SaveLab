@@ -1,0 +1,126 @@
+[
+  {
+    "id": "reno-restore-train-dialogue",
+    "title": "Reno — Restore Train Dialogue",
+    "description": "Temporarily restore Reno's ordinary conversation so the repaired model train can be handed over through the game. The completed kibble deal and papers are preserved.",
+    "evidence": "Confirmed in a local game session on release 1.1 / changeset 40781. Not a claim of compatibility with other story branches.",
+    "risk": "Temporarily clears the historical request-for-kibble flag. It also affects conditional lines in other conversations. Hand over the train, create a NEW manual save, then use Reno — Restore Historical Flag on that new save. Do not replay the kibble deal.",
+    "conditions": [
+      {
+        "kind": "flag",
+        "id": "reno.HasRenoAskedForKibble",
+        "value": true,
+        "existing": true
+      },
+      {
+        "kind": "flag",
+        "id": "reno.GreetDone",
+        "value": true
+      },
+      {
+        "kind": "flag",
+        "id": "reno.GotKibble",
+        "value": true
+      },
+      {
+        "kind": "flag",
+        "id": "king_of_trade.BoughtKibble",
+        "value": true
+      },
+      {
+        "kind": "flag",
+        "id": "reno.GivesYouUVsExitPapers",
+        "value": true
+      },
+      {
+        "kind": "flag",
+        "id": "reno.AlternateGoodByeAtEnd",
+        "value": true
+      },
+      {
+        "kind": "flag",
+        "id": "orphanage.TrainRepairSuccessful",
+        "value": true
+      },
+      {
+        "kind": "flag",
+        "id": "reno.MissingTrain",
+        "value": true
+      },
+      {
+        "kind": "flag",
+        "id": "reno.ReturnedHisModelTrain",
+        "value": false
+      },
+      {
+        "kind": "item",
+        "id": "modeltrain",
+        "present": true
+      },
+      {
+        "kind": "flag",
+        "id": "dialogueFragmentTraversedCardFlag.lh4o6ux99v416vjs",
+        "value": false
+      },
+      {
+        "kind": "card_unread",
+        "id": "lh4o6ux99v416vjs"
+      }
+    ],
+    "changes": [
+      {
+        "id": "reno.HasRenoAskedForKibble",
+        "before": true,
+        "after": false
+      }
+    ],
+    "revert_preset": "reno-restore-historical-flag"
+  },
+  {
+    "id": "reno-restore-historical-flag",
+    "title": "Reno — Restore Historical Flag",
+    "description": "Use on a NEW save made after Reno accepted the train in the game. Restore the original request-for-kibble flag while preserving the game's train handover, reward and inventory changes.",
+    "evidence": "Confirmed after an actual in-game train handover on release 1.1 / changeset 40781.",
+    "risk": "Reno may return to Goodbye-only conversation. This restores the original dialogue routing after the train has already been handed over. Do not use an old pre-handover save as the source.",
+    "conditions": [
+      {
+        "kind": "flag",
+        "id": "reno.HasRenoAskedForKibble",
+        "value": false,
+        "existing": true
+      },
+      {
+        "kind": "flag",
+        "id": "reno.ReturnedHisModelTrain",
+        "value": true
+      },
+      {
+        "kind": "flag",
+        "id": "reno.GotKibble",
+        "value": true
+      },
+      {
+        "kind": "flag",
+        "id": "king_of_trade.BoughtKibble",
+        "value": true
+      },
+      {
+        "kind": "flag",
+        "id": "reno.GivesYouUVsExitPapers",
+        "value": true
+      },
+      {
+        "kind": "item",
+        "id": "modeltrain",
+        "present": false
+      }
+    ],
+    "changes": [
+      {
+        "id": "reno.HasRenoAskedForKibble",
+        "before": false,
+        "after": true
+      }
+    ]
+  }
+]
